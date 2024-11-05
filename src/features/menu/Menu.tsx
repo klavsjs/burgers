@@ -1,16 +1,10 @@
-import { useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { useAppSelector } from "../../app/hooks"
 import { menuSlice } from "./menuSlice"
 import MenuItem from "./MenuItem"
 
 const Menu = () => {
-  const dispatch = useAppDispatch()
-  const menu = useAppSelector(menuSlice.selectors.selectMenu)
+  const menu = useAppSelector(menuSlice.selectors.selectMenuItems)
   const status = useAppSelector(menuSlice.selectors.selectMenuStatus)
-
-  useEffect(() => {
-    dispatch(menuSlice.actions.loadMenu())
-  }, [dispatch])
 
   if (status === "loading") {
     return <div>Loading...</div>

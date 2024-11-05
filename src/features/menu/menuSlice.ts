@@ -20,12 +20,9 @@ const initialState: MenuSliceState = {
   status: "idle",
 }
 
-// If you are not using async thunks you can use the standalone `createSlice`.
 export const menuSlice = createAppSlice({
   name: "menu",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: create => ({
     loadMenu: create.asyncThunk(
       async () => {
@@ -49,7 +46,7 @@ export const menuSlice = createAppSlice({
     ),
   }),
   selectors: {
-    selectMenu: state => state.entities,
+    selectMenuItems: state => state.entities,
     selectMenuStatus: state => state.status,
   },
 })

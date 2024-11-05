@@ -7,6 +7,7 @@ import "./index.css"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import Menu from "./features/menu/Menu"
 import Cart from "./features/cart/Cart"
+import MenuItemDetails from "./features/menu/MenuItemDetails"
 
 const container = document.getElementById("root")
 
@@ -29,6 +30,10 @@ if (container) {
         {
           path: "/cart",
           element: <Cart />,
+        },
+        {
+          path: "/menu/:id",
+          element: <MenuItemDetails />,
         },
       ],
     },
