@@ -1,16 +1,16 @@
 import { useParams } from "react-router-dom"
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
-import { menuSlice } from "./menuSlice"
+import { productsSlice } from "./productsSlice"
 import { cartSlice } from "../cart/cartSlice"
 
-const MenuItemDetails = () => {
+const ProductDetails = () => {
   const { id } = useParams()
   const dispatch = useAppDispatch()
-  const menu = useAppSelector(menuSlice.selectors.selectMenuItems)
+  const menu = useAppSelector(productsSlice.selectors.selectProducts)
   const item = menu.find(item => item.id === id)
 
   if (!item) {
-    return <div>Item not found</div>
+    return <div>Product not found</div>
   }
 
   const handleAddToCart = () => {
@@ -29,9 +29,22 @@ const MenuItemDetails = () => {
             className="aspect-square w-full object-cover"
           />
           <div className="flex flex-col justify-between p-6">
-            <div>
-              <h1 className="mb-4 text-3xl font-bold">{item.title}</h1>
-              <p className="mb-6 text-lg text-gray-600">{item.description}</p>
+            <div className="flex flex-col gap-4">
+              <h1 className="text-3xl font-bold">{item.title}</h1>
+              <p className="text-lg text-gray-600">{item.description}</p>
+              <div className="mb-4 flex flex-col gap-2">
+                <p className="text-lg font-semibold">Toppings</p>
+                <ul className="flex flex-wrap gap-2">
+                  {item.toppings.map(topping => (
+                    <li
+                      key={topping}
+                      className="rounded-full bg-blue-100 px-3 py-1 text-sm"
+                    >
+                      {topping}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="mt-auto space-y-4">
               <p className="text-2xl font-bold text-blue-700">
@@ -51,4 +64,4 @@ const MenuItemDetails = () => {
   )
 }
 
-export default MenuItemDetails
+export default ProductDetails

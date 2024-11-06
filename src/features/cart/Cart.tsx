@@ -1,12 +1,12 @@
 import { useAppSelector } from "../../app/hooks"
-import { menuSlice } from "../menu/menuSlice"
+import { productsSlice } from "../products/productsSlice"
 import { cartSlice } from "./cartSlice"
 import { Link } from "react-router-dom"
 import PaymentDialog from "./PaymentDialog"
 
 const Cart = () => {
   const cart = useAppSelector(cartSlice.selectors.selectCartItems)
-  const menu = useAppSelector(menuSlice.selectors.selectMenuItems)
+  const menu = useAppSelector(productsSlice.selectors.selectProducts)
 
   const cartItems = Object.entries(cart).map(([id, quantity]) => {
     const menuItem = menu.find(item => item.id === id)

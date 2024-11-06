@@ -1,8 +1,8 @@
 import { Plus } from "lucide-react"
 import { Link } from "react-router-dom"
-import type { MenuItem as MenuItemType } from "./menuSlice"
+import type { Product as ProductType } from "./productsSlice"
 
-const MenuItem = ({ item }: { item: MenuItemType }) => {
+const Product = ({ item }: { item: ProductType }) => {
   return (
     <Link
       to={`/menu/${item.id}`}
@@ -23,4 +23,4 @@ const MenuItem = ({ item }: { item: MenuItemType }) => {
   )
 }
 
-export default MenuItem
+export default Product

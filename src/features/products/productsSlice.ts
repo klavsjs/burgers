@@ -1,6 +1,6 @@
 import { createAppSlice } from "../../app/createAppSlice"
 
-export interface MenuItem {
+export interface Product {
   description: string
   id: string
   img: string
@@ -10,21 +10,21 @@ export interface MenuItem {
   toppings: string[]
 }
 
-export interface MenuSliceState {
-  entities: MenuItem[]
+export interface ProductsSliceState {
+  entities: Product[]
   status: "idle" | "loading" | "failed"
 }
 
-const initialState: MenuSliceState = {
+const initialState: ProductsSliceState = {
   entities: [],
   status: "idle",
 }
 
-export const menuSlice = createAppSlice({
-  name: "menu",
+export const productsSlice = createAppSlice({
+  name: "products",
   initialState,
   reducers: create => ({
-    loadMenu: create.asyncThunk(
+    loadProducts: create.asyncThunk(
       async () => {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/products.json`,
@@ -46,7 +46,7 @@ export const menuSlice = createAppSlice({
     ),
   }),
   selectors: {
-    selectMenuItems: state => state.entities,
-    selectMenuStatus: state => state.status,
+    selectProducts: state => state.entities,
+    selectProductsStatus: state => state.status,
   },
 })

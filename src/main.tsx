@@ -5,9 +5,9 @@ import Root from "./Root"
 import { store } from "./app/store"
 import "./index.css"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
-import Menu from "./features/menu/Menu"
+import ProductList from "./features/products/ProductList"
 import Cart from "./features/cart/Cart"
-import MenuItemDetails from "./features/menu/MenuItemDetails"
+import ProductDetails from "./features/products/ProductDetails"
 
 const container = document.getElementById("root")
 
@@ -25,7 +25,7 @@ if (container) {
       children: [
         {
           path: "/",
-          element: <Menu />,
+          element: <ProductList />,
         },
         {
           path: "/cart",
@@ -33,7 +33,7 @@ if (container) {
         },
         {
           path: "/menu/:id",
-          element: <MenuItemDetails />,
+          element: <ProductDetails />,
         },
       ],
     },

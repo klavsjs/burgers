@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import type { PropsWithChildren } from "react"
 import { useAppDispatch, useAppSelector } from "./app/hooks"
-import { menuSlice } from "./features/menu/menuSlice"
+import { productsSlice } from "./features/products/productsSlice"
 import { cartSlice } from "./features/cart/cartSlice"
 import { Link, useLocation } from "react-router-dom"
 import { ShoppingCart } from "lucide-react"
@@ -14,7 +14,7 @@ const Root = ({ children }: PropsWithChildren) => {
   const location = useLocation()
 
   useEffect(() => {
-    dispatch(menuSlice.actions.loadMenu())
+    dispatch(productsSlice.actions.loadProducts())
   }, [dispatch])
 
   return (
