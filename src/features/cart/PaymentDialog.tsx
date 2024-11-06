@@ -3,7 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog"
 const PaymentDialog = ({ totalToPay }: { totalToPay: number }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <button className="mt-4 w-full rounded-lg bg-blue-700 py-2 text-white hover:bg-blue-800">
+      <button className="mt-4 w-full rounded-lg bg-sky-700 py-2 text-white hover:bg-sky-800">
         Pay Now
       </button>
     </Dialog.Trigger>
@@ -42,7 +42,7 @@ const PaymentDialog = ({ totalToPay }: { totalToPay: number }) => (
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg bg-blue-700 py-2 text-white hover:bg-blue-800"
+            className="w-full rounded-lg bg-sky-700 py-2 text-white hover:bg-sky-800"
           >
             Pay CHF {totalToPay.toFixed(2)}
           </button>

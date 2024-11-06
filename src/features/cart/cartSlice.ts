@@ -23,6 +23,20 @@ export const cartSlice = createSlice({
       state.entities[action.payload.id] =
         (state.entities[action.payload.id] || 0) + action.payload.quantity
     },
+    incrementItemQuantity: (state, action) => {
+      state.entities[action.payload.id] =
+        (state.entities[action.payload.id] || 0) + 1
+    },
+    decrementItemQuantity: (state, action) => {
+      state.entities[action.payload.id] =
+        (state.entities[action.payload.id] || 0) - 1
+    },
+    removeItem: (state, action) => {
+      delete state.entities[action.payload]
+    },
+    removeAllItems: state => {
+      state.entities = {}
+    },
   },
   selectors: {
     selectCartItems: state => state.entities,
@@ -31,5 +45,6 @@ export const cartSlice = createSlice({
         (sum, quantity) => sum + quantity,
         0,
       ),
+    selectItemQuantity: (state, id) => state.entities[id] || 0,
   },
 })

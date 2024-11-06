@@ -24,11 +24,11 @@ const Root = ({ children }: PropsWithChildren) => {
           <h1 className="text-2xl font-bold text-gray-900">Burger & Burgers</h1>
           <Link
             to="/cart"
-            className="flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2 text-white hover:bg-blue-800"
+            className="flex items-center gap-2 rounded-lg bg-sky-700 px-4 py-2 text-white hover:bg-sky-800"
           >
             <ShoppingCart />
             {cartTotalQuantity > 0 && (
-              <span className="min-w-6 text-center font-medium">
+              <span className="min-w-6 text-center font-mono font-medium">
                 {cartTotalQuantity}
               </span>
             )}

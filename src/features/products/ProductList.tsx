@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../app/hooks"
 import { productsSlice } from "./productsSlice"
-import Product from "./Product"
+import ProductListItem from "./ProductListItem"
 
 const ProductList = () => {
   const menu = useAppSelector(productsSlice.selectors.selectProducts)
@@ -17,7 +17,7 @@ const ProductList = () => {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {menu.map(item => (
-        <Product key={item.id} item={item} />
+        <ProductListItem key={item.id} item={item} />
       ))}
     </div>
   )
