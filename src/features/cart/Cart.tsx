@@ -2,6 +2,7 @@ import { useAppSelector } from "../../app/hooks"
 import { menuSlice } from "../menu/menuSlice"
 import { cartSlice } from "./cartSlice"
 import { Link } from "react-router-dom"
+import PaymentDialog from "./PaymentDialog"
 
 const Cart = () => {
   const cart = useAppSelector(cartSlice.selectors.selectCartItems)
@@ -60,6 +61,7 @@ const Cart = () => {
             CHF {total.toFixed(2)}
           </p>
         </div>
+        <PaymentDialog totalToPay={total} />
       </div>
     </div>
   )

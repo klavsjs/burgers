@@ -18,10 +18,10 @@ const Root = ({ children }: PropsWithChildren) => {
   }, [dispatch])
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="flex min-h-screen flex-col bg-gray-100">
       <header className="sticky top-0 z-50 bg-white shadow">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-          <h1 className="text-2xl font-bold text-gray-900">Resto App</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Burger & Burgers</h1>
           <Link
             to="/cart"
             className="flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2 text-white hover:bg-blue-800"
@@ -35,7 +35,7 @@ const Root = ({ children }: PropsWithChildren) => {
           </Link>
         </div>
       </header>
-      <main>
+      <main className="flex-grow">
         <div className="mx-auto flex max-w-7xl flex-1 flex-col gap-4 px-4 py-6">
           {location.pathname !== "/" && (
             <Link
@@ -48,10 +48,10 @@ const Root = ({ children }: PropsWithChildren) => {
           {children}
         </div>
       </main>
-      <footer className="mt-auto bg-white shadow">
+      <footer className="bg-white shadow">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <p className="text-center text-gray-600">
-            © {new Date().getFullYear()} Resto App. All rights reserved.
+            © {new Date().getFullYear()} | 🍔 & 🍔🍔
           </p>
         </div>
       </footer>
