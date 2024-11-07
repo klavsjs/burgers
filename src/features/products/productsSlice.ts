@@ -27,7 +27,7 @@ export const productsSlice = createAppSlice({
     loadProducts: create.asyncThunk(
       async () => {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/products.json`,
+          "https://ymagyn-76ef3-default-rtdb.europe-west1.firebasedatabase.app/products.json",
         )
         return response.json()
       },

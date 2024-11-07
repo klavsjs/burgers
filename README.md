@@ -1,27 +1,26 @@
-# vite-template-redux
+# Burger & Burgers
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+## Project Setup
+
+This project was bootstrapped with vite-template-redux. Tailwind and React Router were added separately. There are also two primitive components used from Radix UI: DropdownMenu and Dialog. And a few icons from Lucide.
 
 ```sh
 npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
 ```
 
-## Goals
+## Running the Project Locally
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+Prerequisites: Node.js (v18+) and npm installed.
 
-## Scripts
+```sh
+npm install
+npm run dev
+```
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+## Functionality
 
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+- Products are fetched from an endpoint returning a JSON file and displayed on the home page.
+- Products can be added to the cart from ProductDetails page - URL of each product is unique and can be shared.
+- Product list also displays which products are currently in the cart and their total quantity.
+- The cart displays the added products, their quantity, and the total price - with a dropdown menu to perform actions on each item.
+- The cart has a "Pay Now" button that opens a payment dialog that, unfortunately, doesn't send me any money.
