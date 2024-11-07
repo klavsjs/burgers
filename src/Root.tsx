@@ -40,7 +40,7 @@ const Root = ({ children }: PropsWithChildren) => {
           {location.pathname !== "/" && (
             <Link
               to="/"
-              className="inline-block w-fit rounded-lg bg-gray-100 px-4 py-2 text-gray-700 hover:bg-gray-200"
+              className="inline-block w-fit rounded-lg bg-gray-100 px-4 py-2 font-mono text-gray-700 hover:bg-gray-200"
             >
               ← Back to Menu
             </Link>

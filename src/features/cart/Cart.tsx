@@ -62,17 +62,17 @@ const Cart = () => {
                   </button>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Portal>
-                  <DropdownMenu.Content className="min-w-[180px] rounded-lg bg-white p-1 shadow-lg">
+                  <DropdownMenu.Content className="min-w-[180px] rounded-lg border border-gray-200 bg-white p-1 shadow-xl">
                     <DropdownMenu.Item asChild>
                       <Link
                         to={`/menu/${item.id}`}
-                        className="flex cursor-pointer items-center rounded-md px-2 py-2 text-sm outline-none hover:bg-gray-100"
+                        className="flex cursor-pointer items-center rounded-md px-2 py-2 font-mono text-sm outline-none hover:bg-gray-100"
                       >
                         View details
                       </Link>
                     </DropdownMenu.Item>
                     <DropdownMenu.Item
-                      className="flex cursor-pointer items-center rounded-md px-2 py-2 text-sm outline-none hover:bg-gray-100"
+                      className="flex cursor-pointer items-center rounded-md px-2 py-2 font-mono text-sm outline-none hover:bg-gray-100"
                       onClick={() =>
                         dispatch(
                           cartSlice.actions.incrementItemQuantity({
@@ -84,7 +84,7 @@ const Cart = () => {
                       Add one more
                     </DropdownMenu.Item>
                     <DropdownMenu.Item
-                      className="flex cursor-pointer items-center rounded-md px-2 py-2 text-sm outline-none hover:bg-gray-100"
+                      className="flex cursor-pointer items-center rounded-md px-2 py-2 font-mono text-sm outline-none hover:bg-gray-100"
                       onClick={() =>
                         dispatch(
                           cartSlice.actions.decrementItemQuantity({
@@ -96,7 +96,7 @@ const Cart = () => {
                       Remove one
                     </DropdownMenu.Item>
                     <DropdownMenu.Item
-                      className="flex cursor-pointer items-center rounded-md px-2 py-2 text-sm text-red-600 outline-none hover:bg-red-50"
+                      className="flex cursor-pointer items-center rounded-md px-2 py-2 font-mono text-sm text-red-600 outline-none hover:bg-red-50"
                       onClick={() =>
                         dispatch(cartSlice.actions.removeItem(item.id))
                       }
@@ -124,7 +124,7 @@ const Cart = () => {
       <div className="px-4">
         <button
           onClick={() => dispatch(cartSlice.actions.removeAllItems())}
-          className="w-full rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-100"
+          className="w-full rounded-lg border border-red-200 bg-red-50 px-4 py-2 font-mono text-sm font-medium text-red-600 hover:bg-red-100"
         >
           Clear cart
         </button>
